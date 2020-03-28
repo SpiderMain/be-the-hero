@@ -8,8 +8,6 @@ module.exports = {
 
         //[variavel] Retorna o primeiro registro da tabela, sem criar um array
         const [count] = await connection('incidents').count();
-
-        console.log(count);
         
         const incidents = await connection('incidents')
             .join('ongs', 'ongs.id', '=', 'incidents.ong_id')
